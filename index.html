@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Código</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            width: 320px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #codigo {
+            background: #0d0d0d;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 22px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+
+        button {
+            background: #fff;
+            color: #111;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Gerador de Código</h1>
+
+        <div id="codigo">Clique no botão</div>
+
+        <button onclick="gerarCodigo()">
+            Gerar código
+        </button>
+    </div>
+
+    <script>
+        function gerarCodigo() {
+            const caracteres =
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            let codigo = "";
+
+            for (let i = 0; i < 12; i++) {
+                const numero = Math.floor(
+                    Math.random() * caracteres.length
+                );
+
+                codigo += caracteres[numero];
+            }
+
+            document.getElementById("codigo").textContent = codigo;
+        }
+    </script>
+
+</body>
+</html>
